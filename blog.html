@@ -1,0 +1,94 @@
+<div class="table-container">
+  <div class="table-wrap">
+    <div class="search-wrap">
+      <input
+        type="search"
+        id="search"
+        placeholder="Cari Title..."
+        autocomplete="off"
+        onkeyup="filterTable()" />
+      <button class="add-blog" id="addBlog" onclick="openModal()">+</button>
+    </div>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="pagination" class="pagination"></div>
+</div>
+
+<!-- <div id="modalAdd" class="modal">
+  <div class="modal-content">
+    <div class="flex-wrap">
+      <h2>Form Input Blog</h2>
+      <button class="close" onclick="closeModalAdd()">&times;</button>
+    </div>
+    <form id="blogForm" method="post" enctype="multipart/form-data">
+      <label for="title">Judul:</label>
+      <input type="hidden" id="userId" />
+      <input type="text" id="title" name="title" required />
+      <label for="content">Konten:</label>
+      <textarea id="content" name="content" rows="4" required></textarea>
+
+      <label for="image">Gambar:</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+
+      <button type="submit" id="addButtonForm">Tambahkan</button>
+    </form>
+  </div>
+</div> -->
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <div class="flex-wrap">
+      <h2 id="formTitle">Form Input Blog</h2>
+      <button class="close" onclick="closeModal()">&times;</button>
+    </div>
+    <form
+      id="blogForm"
+      enctype="multipart/form-data"
+      onsubmit="handleFormSubmit()">
+      <label for="title">Judul:</label>
+      <input type="hidden" id="blogId" />
+      <input type="text" id="title" name="title" required />
+
+      <label for="content">Konten:</label>
+      <textarea id="content" name="content" rows="4" required></textarea>
+
+      <label for="image">Gambar:</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+      <img
+        id="imagePreview"
+        src=""
+        alt="Preview"
+        style="display: none; max-width: 100%" />
+
+      <button type="submit" id="ButtonForm">Save</button>
+    </form>
+  </div>
+  <div class="delete-alert">
+    <div>
+      <p>Are you sure want to delete?</p>
+      <input type="hidden" id="delBlogId" />
+      <h2 id="delTitle"></h2>
+      <div class="flex gap-8">
+        <button class="cancel" onclick="closeModal()">Cancel</button>
+        <button
+          style="background-color: #c21a0e"
+          class="delete"
+          onclick="deleteBlog()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js3.js"></script>

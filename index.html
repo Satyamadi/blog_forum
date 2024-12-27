@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="cssdash.css" />
+  </head>
+  <body>
+    <nav>
+      <button class="hamburger" onclick="toggleNav()">☰</button>
+
+      <div class="side-nav" id="sideNav">
+        <div>
+          <h2>Menu</h2>
+          <div class="menu">
+            <a
+              href="/dashboard"
+              class="active"
+              id="dashboard"
+              onclick="loadContent('dashboard.html', event)">
+              <div class="icon">
+                <img src="img/dashboard.svg" alt="" />
+              </div>
+              Dashboard
+            </a>
+            <a href="/blog" id="blog" onclick="loadContent('blog.html', event)">
+              <div class="icon"><img src="img/blog.png" alt="" /></div>
+              Blog
+            </a>
+          </div>
+        </div>
+        <a href="#" class="logout" onclick="logout(event)">Logout</a>
+      </div>
+      <div class="top-nav">
+        <h1>Dashboard</h1>
+        <div class="profile">
+          <div class="flex-wrap" style="gap: 8px">
+            <img src="https://via.placeholder.com/40" alt="Profile" />
+            <p id="userName">Ussername</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="contents"></div>
+  </body>
+  <script src="js3.js"></script>
+  <!-- <script src="jsLogin.js"></script> -->
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="cssdash.css" />
+  </head>
+  <body>
+    <section class="grid-center">
+      <section class="container" id="formContainer">
+        <div class="form-container sign-up-container">
+          <form
+            class="form-sign"
+            id="formSignUp"
+            onsubmit="handleRegister(event)">
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Name" id="name" required />
+            <input type="email" placeholder="Email" id="email" required />
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              required />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              id="confirmPassword"
+              required />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form class="form-sign" onsubmit="handleSignIn(event)">
+            <h1>Sign in</h1>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" id="loginEmail" required />
+            <input
+              type="password"
+              placeholder="Password"
+              id="loginPassword"
+              required />
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+        <div id="formToggleButtonContainer" class="hidden">
+          <button id="formToggleButton"></button>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>
+                To keep connected with us please login with your personal info
+              </p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+  <script src="js3.js"></script>
+  <script src="jsLogin.js"></script>
+</html>
